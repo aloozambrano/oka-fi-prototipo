@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portal OKA-Fi · Prototipo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>Portal OKA-Fi · Prototipo de flujos</h1>
+      <p>Prototipo de diseño del portal cautivo de la red Wi-Fi OKA-Fi. Cada flujo recorre una casuística distinta, desde que el cliente elige la red hasta el resultado final.</p>
+      <p>Abre un flujo en tu celular o en la laptop y toca los botones como lo haría un cliente. Si no sabes dónde tocar, toca fuera del botón y se marcará la zona.</p>
+      <span class="note">Datos de ejemplo · En esta etapa no se muestran montos de oferta</span>
+    </header>
+    <section class="grid" id="grid"></section>
+    <footer>Prototipo de diseño, sin conexión a sistemas reales. Fuente: Figma Sprint 30 · Oka-Fi.</footer>
+  </main>
+  <script src="data.js"></script>
+  <script>
+    const grid = document.getElementById("grid");
+    grid.innerHTML = FLOWS.map(f => `
+      <article class="card">
+        <div class="top"><span class="num">${f.id}</span><span class="tag ${f.tag}">${f.tag}</span></div>
+        <h2>${f.title}</h2>
+        <p>${f.desc}</p>
+        <div class="actions">
+          <a class="btn primary" href="flujo.html?f=${f.id}&modo=prueba">Probar flujo</a>
+          <a class="btn ghost" href="flujo.html?f=${f.id}">Con hoja resumen</a>
+        </div>
+      </article>`).join("");
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Flujo · Portal OKA-Fi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="viewer">
+  <div class="bar">
+    <a class="back" href="index.html">← Flujos</a>
+    <span class="ttl" id="ttl"></span>
+    <span class="step" id="stepLabel"></span>
+    <button id="btnBack" type="button">Atrás</button>
+    <button id="btnRestart" type="button">Reiniciar</button>
+    <button id="btnSheet" type="button">Hoja resumen</button>
+  </div>
+  <div class="layout">
+    <div class="phone-col">
+      <div class="phone" id="phone">
+        <img id="screen" alt="Pantalla del portal OKA-Fi" draggable="false">
+        <div id="zones"></div>
+      </div>
+      <div class="caption" id="caption"></div>
+      <div class="end hide" id="end"><span>Fin del flujo</span><button id="btnEnd" type="button">Volver a empezar</button></div>
+    </div>
+    <aside class="sheet hide" id="sheet" aria-label="Hoja resumen"></aside>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
